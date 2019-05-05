@@ -113,3 +113,6 @@ OUTPUT:
         "ANIMAL": 2
     }
 }
+
+# Deployed to PCF
+Use below host name for hitting : https://nuestar-task.cfapps.io/neustarcatserv/process
