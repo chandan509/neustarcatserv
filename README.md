@@ -68,3 +68,48 @@ body:[
     "subCategory": "Cat"
   }
 ]
+
+OUTPUT:
+{
+    "productList": [
+        {
+            "category": "PERSON",
+            "subCategory": "Bob Jones"
+        },
+        {
+            "category": "PLACE",
+            "subCategory": "Washington"
+        },
+        {
+            "category": "PERSON",
+            "subCategory": "Mary"
+        },
+        {
+            "category": "COMPUTER",
+            "subCategory": "Mac"
+        },
+        {
+            "category": "OTHER",
+            "subCategory": "Tree"
+        },
+        {
+            "category": "ANIMAL",
+            "subCategory": "Dog"
+        },
+        {
+            "category": "PLACE",
+            "subCategory": "Texas"
+        },
+        {
+            "category": "ANIMAL",
+            "subCategory": "Cat"
+        }
+    ],
+    "catGroup": {
+        "PERSON": 2,
+        "PLACE": 2,
+        "COMPUTER": 1,
+        "OTHER": 1,
+        "ANIMAL": 2
+    }
+}

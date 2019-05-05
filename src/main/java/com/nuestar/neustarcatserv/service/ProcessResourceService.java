@@ -1,6 +1,7 @@
 package com.nuestar.neustarcatserv.service;
 
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -31,8 +32,10 @@ public class ProcessResourceService {
 												.filter(product -> legalCatList.contains(new Category(product.getCategory())))
 												.collect(Collectors.toList());
 		
+		Set<Product> setOfFilteredProducts = new LinkedHashSet<>(filteredProducts);
+		
 		Map<String, Integer> catGroup = new LinkedHashMap<>();
-		filteredProducts.stream().forEach(product -> {
+		setOfFilteredProducts.stream().forEach(product -> {
 			if(!catGroup.containsKey(product.getCategory())){
 				catGroup.put(product.getCategory(), 1);
 			}
@@ -42,7 +45,7 @@ public class ProcessResourceService {
 				catGroup.put(product.getCategory(), count);
 			}
 		});
-		result.setProductList(filteredProducts);
+		result.setProductList(setOfFilteredProducts);
 		result.setCatGroup(catGroup);													
 		
 		return result;

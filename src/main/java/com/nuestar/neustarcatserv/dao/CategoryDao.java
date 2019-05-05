@@ -10,7 +10,18 @@ import com.nuestar.neustarcatserv.model.Category;
 @Repository
 public class CategoryDao {
 	
-	private Set<Category> categories = new LinkedHashSet<>();
+	private Set<Category> categories;	
+	
+	public CategoryDao() {
+		categories = new LinkedHashSet<>();
+		categories.add(new Category("PERSON"));
+		categories.add(new Category("PLACE"));
+		categories.add(new Category("ANIMAL"));
+		categories.add(new Category("COMPUTER"));
+		categories.add(new Category("OTHER"));
+	}
+	
+	
 	
 	public boolean addCategory(Category cat){
 		return categories.add(cat);

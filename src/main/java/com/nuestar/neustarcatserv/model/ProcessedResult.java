@@ -1,18 +1,18 @@
 package com.nuestar.neustarcatserv.model;
 
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import java.util.List;
+import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class ProcessedResult {
-	List<Product> productList = new ArrayList<>();
+	Set<Product> productList = new LinkedHashSet<>();
 	Map<String, Integer> catGroup = new LinkedHashMap<>();
 	
-	public List<Product> getProductList() {
+	public Set<Product> getProductList() {
 		return productList;
 	}
-	public void setProductList(List<Product> productList) {
+	public void setProductList(Set<Product> productList) {
 		this.productList = productList;
 	}
 	public Map<String, Integer> getCatGroup() {
