@@ -1,6 +1,9 @@
 # neustarcatserv
 Nuestar Company Task
 
+# Deployed to PCF
+* We can use https://nuestar-task.cfapps.io in plcase of localhost:8080 to directly access service over internet.
+
 # Get Categories
 http://localhost:8080/neustarcatserv/categories
 method: GET
@@ -114,5 +117,8 @@ OUTPUT:
     }
 }
 
-# Deployed to PCF
-Use below host name for hitting : https://nuestar-task.cfapps.io/neustarcatserv/process
+# Additional Details
+* Currently only one instance is running in PCF
+* We can scale the service by increasing the no of instances
+* We create and bing rediscloud service and have common cache if we want to scale the service
+* We can check load of each instance and health in PCF.
