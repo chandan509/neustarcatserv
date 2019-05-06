@@ -120,5 +120,5 @@ OUTPUT:
 # Additional Details
 * Currently only one instance is running in PCF
 * We can scale the service by increasing the no of instances
-* We create and bing rediscloud service and have common cache if we want to scale the service
+* We have to create and bind rediscloud service and have common cache if we want to scale the service
 * We can check load of each instance and health in PCF.
