@@ -1,6 +1,10 @@
 package com.nuestar.neustarcatserv.model;
 
 public class Product {
+	
+	public Product(){
+		
+	}
 	public Product(String category, String subCategory) {
 		super();
 		this.category = category;
