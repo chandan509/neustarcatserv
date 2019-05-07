@@ -21,4 +21,9 @@ public class ProcessedResult {
 	public void setCatGroup(Map<String, Integer> catGroup) {
 		this.catGroup = catGroup;
 	}
+	@Override
+	public String toString() {
+		return "ProcessedResult [productList=" + productList + ", catGroup="
+				+ catGroup + "]";
+	}
 }

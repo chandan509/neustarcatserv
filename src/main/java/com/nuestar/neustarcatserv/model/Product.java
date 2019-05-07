@@ -64,4 +64,9 @@ public class Product {
 		}
 		return true;
 	}
+	@Override
+	public String toString() {
+		return "Product [category=" + category + ", subCategory=" + subCategory
+				+ "]";
+	}
 }
