@@ -1,9 +1,13 @@
 package com.nuestar.neustarcatserv.service;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -53,6 +57,26 @@ public class ProcessResourceService {
 				catGroup.put(product.getCategory(), count);
 			}
 		});
+		
+		legalCatList.stream().forEach(cat ->{
+			if(!catGroup.containsKey(cat.getName())){
+				catGroup.put(cat.getName(), 0);
+			}			
+		});
+		
+		Set<Entry<String, Integer>> set =  catGroup.entrySet();
+		List<Entry<String, Integer>> list = new ArrayList<Map.Entry<String,Integer>>(set);
+		Collections.sort(list, new Comparator<Entry<String, Integer>>() {
+			public int compare(Entry<String, Integer> obj1, Entry<String, Integer> obj2){
+				return obj2.getValue().compareTo(obj1.getValue());				
+			}
+		});
+		catGroup.clear();
+		for(Entry<String, Integer> e: list){
+			catGroup.put(e.getKey(), e.getValue());			
+		}
+		
+		
 		result.setProductList(setOfFilteredProducts);
 		result.setCatGroup(catGroup);													
 		
